@@ -1,0 +1,142 @@
+/* Estilos generales de la página */
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente más moderna */
+    background: linear-gradient(135deg, #eafafc, #00b8c5); /* Fondo de gradiente */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+header {
+    margin: 20px;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #007f8c; /* Color de encabezado más vibrante */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+h1 {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    color: #007f8c;
+}
+
+/* Contenedor de las tarjetas */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Estilos para las tarjetas */
+.card {
+    background-color: #00b8c5;
+    color: white;
+    padding: 25px;
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    max-width: 300px; /* Limitar el ancho para que las tarjetas sean consistentes */
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Suaviza la subida con más movimiento */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25); /* Sombra más fuerte al pasar el mouse */
+    background-color: #007f8c; /* Cambio de color al pasar el mouse */
+}
+
+/* Modal */
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Inicialmente oculto */
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+    z-index: 1000; /* Aseguramos que esté por encima del contenido */
+}
+
+/* Mostrar modal solo cuando está activo */
+.modal:not(.hidden) {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 800px;
+    max-height: 900px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Para asegurar que el fondo oscuro se muestre solo cuando se abre el modal */
+.modal-content {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Para ocultar cuando no se está mostrando el modal */
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .cards-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+
